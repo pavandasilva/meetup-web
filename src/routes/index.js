@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
+import Route from './Route';
 import Login from '~/pages/Login';
 import Register from '~/pages/Register';
 import Dashboard from '~/pages/Dashboard';
@@ -13,10 +14,12 @@ export default function Routes() {
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard" component={Dashboard} isPrivate />
         <Route path="/detail" component={Detail} />
         <Route path="/profile" component={Profile} />
         <Route path="/meetup" component={MeetupController} />
+
+        <Route path="/" component={() => <h1>404</h1>} />
       </Switch>
     </BrowserRouter>
   );
