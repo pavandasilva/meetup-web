@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -30,13 +30,6 @@ export const Container = styled.div`
       margin-bottom: 5px;
     }
 
-    button {
-      width: 100%;
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
     a {
       margin-top: 25px;
       color: #fff;
@@ -44,5 +37,45 @@ export const Container = styled.div`
       font-size: 16px;
       text-decoration: none;
     }
+
+    /* mensagem de validação do Yup */
+    span {
+      font-weight: bold;
+      color: #f94d6a;
+      margin-bottom: 5px;
+    }
   }
+`;
+
+const rotate = keyframes`
+  from{
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+`;
+
+export const LoadingButton = styled.button.attrs(props => ({
+  disabled: props.loading,
+}))`
+  width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  ${props =>
+    props.loading &&
+    css`
+      svg {
+        animation: ${rotate} 2s linear infinite;
+      }
+    `}
 `;
