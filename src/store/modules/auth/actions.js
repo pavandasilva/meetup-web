@@ -12,8 +12,8 @@ export function loginSucess(user, token) {
   };
 }
 
-export function failure() {
+export function loginFailure() {
   return {
-    type: 'auth/FAILURE',
+    type: 'auth/LOGIN_FAILURE',
   };
 }

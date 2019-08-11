@@ -21,7 +21,7 @@ export default function auth(state = initial_state, action) {
         draft.loading = false;
       });
 
-    case 'auth/FAILURE':
+    case 'auth/LOGIN_FAILURE':
       return produce(state, draft => {
         draft.loading = false;
       });

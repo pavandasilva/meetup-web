@@ -4,7 +4,7 @@ import { persistReducer } from 'redux-persist';
 function persistReducers(reducers) {
   const persistedReducer = persistReducer(
     {
-      key: 'webMeetups',
+      key: '@Meetup',
       storage,
       whitelist: ['auth', 'user'],
     },
