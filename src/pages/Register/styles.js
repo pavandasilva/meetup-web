@@ -52,5 +52,12 @@ export const Container = styled.div`
       font-size: 16px;
       text-decoration: none;
     }
+
+    /* mensagem de validação do Yup */
+    span {
+      font-weight: bold;
+      color: #f94d6a;
+      margin-bottom: 5px;
+    }
   }
 `;

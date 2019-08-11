@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import history from '~/services/history';
 import api from '~/services/api';
 
-import { loginSucess, failure } from './actions';
+import { loginSucess, loginFailure } from './actions';
 
 export function* login({ payload }) {
   try {
@@ -24,7 +24,7 @@ export function* login({ payload }) {
     history.push('/dashboard');
   } catch (error) {
     toast.error('Falha no login, verifique seus dados');
-    yield put(failure());
+    yield put(loginFailure());
   }
 }
 
